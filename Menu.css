@@ -1,0 +1,178 @@
+:root
+{
+  --p: #282828;
+  --s: #121212;
+  --t: #382bf0;
+}
+
+.MrModal 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background-color: var(--p);
+  color: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.tabContent
+{
+  display: flex;
+  height: 74px!important;
+  background-color: var(--s);;
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.tabContent > div
+{
+  width: 100%;
+  height: 32px;
+  margin-right: 16px;
+  margin-left: 16px;
+  display: flex;
+  align-items: center; /* Alinha verticalmente os itens no centro */
+}
+
+
+.tabContent > div > .item
+{
+  display: flex;
+  color: white;
+  font-family: "futurept_b1", Arial;
+  font-size: 13px;
+  height: 42px;
+  align-items: center;
+}
+
+.tabContent > div > .item:not(:last-child) { margin-right: 25px;}
+
+.tabContent > div > .item:nth-of-type(2) 
+{
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  ms-overflow-style: none;
+  white-space: nowrap;
+}
+
+
+.tabContent > div > .item.tabs > .tab
+{ 
+  cursor: pointer;
+  border-radius: 30px;
+  user-select: none;
+  padding-left:12px;
+  padding-right: 12px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--t);
+  color: white;
+  border: 0px;
+  font-size: 13px;
+}
+
+.tabContent > div > .item > #closebtn
+{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #f25056;
+  border: none;
+  z-index: 1001;
+}
+
+
+.MrModal .MrSection 
+{
+  padding: 15px;
+  height: 100%;
+}
+
+.MrModal .MrSection > .row
+{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.MrModal .MrSection > .row > input
+{
+  font-size: 25px;
+  font-family: "futurept_b1", Arial;
+  height: 35px;
+  padding: 5px 12px;
+  background-color: var(--s);
+  color: white;
+  border: none;
+}
+
+.MrModal .MrSection > .row > a
+{
+  font-size: 25px;
+  font-family: "futurept_b1", Arial;
+  display: flex;
+  align-items: center;
+}
+
+.MrModal .MrSection > .row > button
+{
+  font-size: 25px;
+  font-family: "futurept_b1", Arial;
+  display: flex;
+  align-items: center;
+  padding: 5px 25px;
+  background-color: var(--t);
+  color: white;
+  border-radius: 12px;
+  border: none;
+  height: 45px;
+}
+
+.MrModal .MrSection > .row > input[type="range"] 
+{
+  display: flex;
+  align-items: center;
+  -webkit-appearance: none; 
+  width: 350px;
+  background: var(--s);
+  border-radius: 5px; 
+  outline: none; 
+  transition: opacity .15s ease-in-out; 
+}
+
+.MrModal .MrSection > .row > input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none; 
+  width: 50px; 
+  height: 50px; 
+  background: var(--t); 
+  border-radius: 50%; 
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb 
+{
+  width: 50px; /* Largura do botão no Firefox */
+  height: 50px; /* Altura do botão no Firefox */
+  background: var(--t); ; /* Cor do botão no Firefox */
+  border-radius: 50%; /* Tornar o botão redondo no Firefox */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.MrModal .MrSection > .row > *:not(:last-child) 
+{
+  margin-right: 12px;
+}
