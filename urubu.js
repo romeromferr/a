@@ -1,17 +1,3 @@
-// ==UserScript==
-// @name         Urubu do Pix
-// @version      1.0
-// @description  Urubu do Pix in bonk
-// @author       MrBonekeiro
-// @match        https://bonk.io/*
-// @match        https://bonkisback.io/*
-// @match        https://multiplayer.gg/physics/*
-// @run-at       document-idle
-// @grant        none
-// @unwrap
-// ==/UserScript==
-
-
 (function (_0x2cfd39, _0x328a5d) {
     var _0x2fcf51 = _0x3f64;
     var _0x2b7b2c = _0x2cfd39();
