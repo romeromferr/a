@@ -5,5 +5,6 @@ window.WebSocket.prototype.send = function(args)
     {
       console.log(args);
     }
+    console.log(args);
     return window.o2.call(this,args);
 }
