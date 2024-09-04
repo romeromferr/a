@@ -1,4 +1,4 @@
-console.log(window);
+console.log(window.location);
 
 window.o2 = WebSocket.prototype.send;
 window.WebSocket.prototype.send = function(args) 
