@@ -1,5 +1,5 @@
 window.o2 = WebSocket.prototype.send;
-window.webSocket.prototype.send = function(args) 
+window.WebSocket.prototype.send = function(args) 
 {
     if(args.startsWith('42[4,21'))
     {
