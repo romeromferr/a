@@ -1,31 +1,190 @@
-<div id="MrModal" style="visibility: visible; opacity: 1;">
-    <div id="tabContent">
-        <div id="icon">
-            <img src="https://bonkleaguebot.herokuapp.com/avatar.svg?skinCode=CgcDYQACCSEBCgcFYWwAAQAOPhmZmgAAAAAAAAAAwKAAAAAAAHsfogoFAAEASz3MzM0AAAAAAAAAAEBTMzMAAABiPdcKBQABAFE9dcKPAAAAAAAAAABBQAAAAAAAAAAACgUAAQBRPmFHrgAAAAAAAAAAQXAAAAAAAGE91woFAAEAUD4ZmZoAAAAAAAAAAEEQAAAAAAA1G4QKBQABAE49zMzNQrQAAAAAAABAQAAAAAAANRuECgUAAQAaPjhR7EJcAABAgAAAQAAAAAABADUbhAoFAAEAHD8AAADCNAAAv4AAAEBAAAAAAAA1NTUKBQABAE89zMzNQrQAAEDgAAA%252FgAAAAAAASADlCgUAAQAaPjhR7MJcAADAgAAAQAAAAAEBADUbhAoFAAEAFz1MzM0AAAAAv8AAAMCZmZoAAABKFIwKBQABABc9TMzNAAAAAD%252FAAADAmZmaAAAAShSMCgUAAQANPjhR7AAAAAAAAAAAwKAAAAAAAAAAAAoFAAEADT6KPXEAAAAAAAAAAMDAAAAAAQA1G4QKBQABAFQ%252BzMzNwzQAAMC2ZmY%252FjMzMAAAAezT%252FCgUAAQBUPszMzUHoAABAtmZmQIAAAAAAAFUH%252FwAUADA%253D">
-            <label>MrMenu</label>
-        </div>
-        <div id="tabs">
-            <button class="tab" tab="0">aaaaaaaaaaa</button>
-        </div>
-        <div id="mrClose">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <line x1="8" y1="8" x2="16" y2="16" stroke="white" stroke-width="0.7"></line>
-                <line x1="16" y1="8" x2="8" y2="16" stroke="white" stroke-width="0.7"></line>
-            </svg>
-        </div>
+<div class="MrMenuUI">
+  <div class="sidebar">
+    <h1>MrMenu by MrBonkeiro</h1>
+    <button class="menu-button" data-tab="HostManager">Host Manager</button>
+    <button class="menu-button" data-tab="ChatCustom">Chat Custom</button>
+    <button class="menu-button" data-tab="Bonktheme">Bonk Theme</button>
+    <button class="menu-button" data-tab="Floodtools">Flood Tools</button>
+    <button class="menu-button" data-tab="KeypressShow">Keypress Show</button>
+    <button class="menu-button" data-tab="XPinvolker">XP Involker</button>
+    <button class="menu-button" data-tab="IPlogger">IP Logger</button>
+    <button class="menu-button" data-tab="Settings">Settings</button>
+  </div>
+  <div class="content">
+    <div data-tab="HostManager">
+      <div class="row">
+        <label>Freejoin:</label>
+      </div>
+      <div class="row">
+        <button id="">Enable</button>
+        <button id="">Disable</button>
+      </div>
+      <div class="row">
+        <label>FastClick Action Nickname:</label>
+      </div>
+      <div class="row">
+        <button id="">Enable</button>
+        <button id="">Disable</button>
+      </div>
+      <div class="row">
+        <label>Kick swear words</label>
+      </div>
+      <div class="row">
+        <button id="">Enable</button>
+        <button id="">Disable</button>
+      </div>
     </div>
-    <div id="tabItem" class="">
-        <div class="active">
-            <div class="container center">
-                <button>a</button>
-                <label>a</label>
-                <input>
-            </div>
-            <div class="container center">
-                <button>a</button>
-                <label>a</label>
-                <input type="range">
-            </div>
-        </div>
+    <div data-tab="ChatCustom">
+      <div class="row">
+        <label>Chat in-game Visibily:</label>
+      </div>
+      <div class="row">
+        <button id="">Visible</button>
+        <button id="">Hidden</button>
+      </div>
+      <div class="row">
+        <label>Chat Align:</label>
+      </div>
+      <div class="row MrChatAlign">
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+        <button id="top">Top</button>
+        <button id="bottom">Bottom</button>
+      </div>
+      <div class="row">
+        <label>Chat background:</label>
+      </div>
+      <div class="row">
+        <div class="colorCircle" style="background: #feca57"></div>
+        <div class="colorCircle" style="background: #ff9f43"></div>
+        <div class="colorCircle" style="background: #ff6b6b"></div>
+        <div class="colorCircle" style="background: #ee5253"></div>
+        <div class="colorCircle" style="background: #48dbfb"></div>
+        <div class="colorCircle" style="background: #0abde3"></div>
+        <div class="colorCircle" style="background: #1dd1a1"></div>
+        <div class="colorCircle" style="background: #10ac84"></div>
+        <div class="colorCircle" style="background: #00d2d3"></div>
+        <div class="colorCircle" style="background: #01a3a4"></div>
+        <div class="colorCircle" style="background: #54a0ff"></div>
+        <div class="colorCircle" style="background: #2e86de"></div>
+        <div class="colorCircle" style="background: #5f27cd"></div>
+        <div class="colorCircle" style="background: #341f97"></div>
+        <div class="colorCircle" style="background: #c8d6e5"></div>
+        <div class="colorCircle" style="background: #8395a7"></div>
+        <div class="colorCircle" style="background: #576574"></div>
+        <div class="colorCircle" style="background: #222f3e"></div>
+      </div>
+      <div class="row">
+        <label>Chat transparency:</label>
+      </div>
+      <div class="row">
+        <button id="">0%</button>
+        <button id="">20%</button>
+        <button id="">40%</button>
+        <button id="">60%</button>
+        <button id="">80%</button>
+        <button id="">100%</button>
+      </div>
+      <div class="row">
+        <label>Chat Emoji:</label>
+      </div>
+      <div class="row">
+        <button id="">Enabled</button>
+        <button id="">Disabled</button>
+      </div>
+      <div class="row">
+        <label>Chat Emoji:</label>
+      </div>
     </div>
+    <div data-tab="Bonktheme">
+    </div>
+    <div data-tab="Floodtools">
+    </div>
+    <div data-tab="KeypressShow">
+      <div class="row">
+        <label>KeyPress</label>
+        <br>
+        <br>
+      </div>
+      <div class="row">
+        <mrkey>Q</mrkey>
+        <mrkey>W</mrkey>
+        <mrkey>E</mrkey>
+        <mrkey class="inac"> </mrkey>
+        <mrkey class="inac"> </mrkey>
+        <mrkey>↑</mrkey>
+      </div>
+      <div class="row">
+        <mrkey>A</mrkey>
+        <mrkey>S</mrkey>
+        <mrkey>D</mrkey>
+        <mrkey class="inac"> </mrkey>
+        <mrkey>←</mrkey>
+        <mrkey>↓</mrkey>
+        <mrkey>→</mrkey>
+      </div>
+      <div class="row">
+        <button id="" style="margin-left: 40px;">Show</button>
+        <button id="" style="margin-left: 135px;">Show</button>
+      </div>
+    </div>
+    <div data-tab="XPinvolker">
+      <div class="row">
+        <label>Settings</label>
+      </div>
+      <div class="row">
+        <button id="">Run</button>
+        <button id="">Stop</button>
+      </div>
+      <div class="row">
+        <label>Delay</label>
+      </div>
+      <div class="row">
+        <button id="" class="large">7 seconds</button>
+        <button id="" class="large">15 seconds</button>
+        <button id="" class="large">30 seconds</button>
+        <button id="" class="large">60 seconds</button>
+      </div>
+    </div>
+    <div data-tab="IPlogger">
+      <div class="row">
+        <label>Settings</label>
+      </div>
+      <div class="row">
+        <button id="">Enable</button>
+        <button id="">Disable</button>
+      </div>
+      <div class="row">
+        <label>Players</label>
+      </div>
+    </div>
+    <div data-tab="Settings">
+      <div class="row">
+        <label>Language</label>
+      </div>
+      <div class="row">
+        <button id="" class="lang"><img src="https://bonk.io/graphics/flags/us.png">
+          <img src="https://bonk.io/graphics/flags/ca.png">English</button>
+        <button id="" class="lang"><img src="https://bonk.io/graphics/flags/br.png">
+          <img src="https://bonk.io/graphics/flags/pt.png">Português</button>
+        <button id="" class="lang"><img src="https://bonk.io/graphics/flags/ar.png">
+          <img src="https://bonk.io/graphics/flags/mx.png">Español</button>
+        <button id="" class="lang"><img src="https://bonk.io/graphics/flags/kr.png">한국인</button>
+        <button id="" class="lang"><img src="https://bonk.io/graphics/flags/ru.png">
+          <img src="https://bonk.io/graphics/flags/ua.png">Русский</button>
+        <button id="" class="lang"><img src="https://bonk.io/graphics/flags/ru.png">
+          <img src="https://bonk.io/graphics/flags/jp.png">日本語</button>
+      </div>
+      <div class="row">
+        <label>Theme</label>
+      </div>
+      <div class="row">
+        <div class="colorCircle" style="background: #1f1f1f"></div>
+        <div class="colorCircle" style="background: #8395a7"></div>
+        <div class="colorCircle" style="background: #c8d6e5"></div>
+        <div class="colorCircle" style="background: #dff9fb"></div>
+        <div class="colorCircle" style="background: #f1f2f6"></div>
+      </div>
+    </div>
+  </div>
 </div>
