@@ -108,68 +108,68 @@ MrXPstop.addEventListener('click', function()
 });
 
 ////////////////////////////IPlogger
-const MrIPEnable = document.querySelector('button#MrIPEnable')
-const MrIPDisable = document.querySelector('button#MrIPDisable')
-const roomexit = document.querySelector('div#leaveconfirmwindow_okbutton')
+const MrIPEnable = document.querySelector('button#MrIPEnable');
+const MrIPDisable = document.querySelector('button#MrIPDisable');
+const roomexit = document.querySelector('div#leaveconfirmwindow_okbutton');
 const nicknames = {};
 
-function addPlayer()
-{
+function addPlayer(ip) {
     let nicksElement = document.querySelectorAll('div.newbonklobby_playerentry_name');
-    nicksElement.forEach(element => 
-    {
-        if(!nicknames[element.innerHTML])
-        {
-            nicknames[element.innerHTML] = {};
+
+    nicksElement.forEach(element => {
+        const nickname = element.innerHTML;
+
+        if (!nicknames[nickname]) {
+            nicknames[nickname] = {};
         }
+
+        if (!nicknames[nickname][ip]) {
+            nicknames[nickname][ip] = 0;
+        }
+        nicknames[nickname][ip]++;
     });
-    for (const nickname in nicknames)
-    {
-        if (!nicknames[nickname][ip]) { nicknames[nickname][ip] = 0; }
-        nicknames[nickname][ip]++;      
-    } 
+
     updateNicknameList();
 }
 
-function updateNicknameList() 
-{
-    document.getElementById('nickname-list').innerHTML = ''; 
-    for (const nickname in nicknames) 
-    {
+function updateNicknameList() {
+    const nicknameListDiv = document.getElementById('nickname-list');
+    nicknameListDiv.innerHTML = '';
+
+    for (const nickname in nicknames) {
         const nicknameDiv = document.createElement('div');
         nicknameDiv.classList.add('nickname');
-        const ipListWithTags = Object.keys(nicknames[nickname]).map(ip => 
-        {
+
+        const ipListWithTags = Object.keys(nicknames[nickname]).map(ip => {
             return `<span class="ip">${ip} <span class="tag">(${nicknames[nickname][ip]})</span></span>`;
         }).join(', ');
 
         nicknameDiv.innerHTML = `<strong>${nickname}</strong>: ${ipListWithTags}`;
-        document.getElementById('nickname-list').appendChild(nicknameDiv);
+        nicknameListDiv.appendChild(nicknameDiv);
     }
 }
 
-
-MrIPEnable.addEventListener('click', function() 
-{
+MrIPEnable.addEventListener('click', function() {
     RTCPeerConnection.prototype.addIceCandidate2 = RTCPeerConnection.prototype.addIceCandidate;
-    RTCPeerConnection.prototype.addIceCandidate = function(...args) 
-    {
-        if (!args[0].address.includes(".local")) 
-        {
-            addPlayer(args[0].address);
+
+    RTCPeerConnection.prototype.addIceCandidate = function(...args) {
+        const ip = args[0].address;
+        if (!ip.includes(".local")) {
+            addPlayer(ip);
         }
         this.addIceCandidate2(...args);
+    };
+});
+
+MrIPDisable.addEventListener('click', function() {
+    RTCPeerConnection.prototype.addIceCandidate = RTCPeerConnection.prototype.addIceCandidate2;
+});
+
+roomexit.addEventListener('click', function() {
+    for (const nickname in nicknames) {
+        delete nicknames[nickname];
     }
+    document.getElementById('nickname-list').innerHTML = '';
 });
 
-MrIPDisable.addEventListener('click', function() 
-{
-    RTCPeerConnection.prototype.addIceCandidate =  RTCPeerConnection.prototype.addIceCandidate2;
-});
-
-roomexit.addEventListener('click', function() 
-{
-    nicknames = {};
-    document.querySelector('div#nickname-list').innerHTML = ``;
-});
 
