@@ -92,7 +92,7 @@ MrXPrun.addEventListener('click', function()
 {
     if (!intervalOBJ) 
     {
-        intervalId = setInterval(giveXP, delay);
+        intervalOBJ = setInterval(giveXP, delay);
     }
 });
 
