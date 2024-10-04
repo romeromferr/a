@@ -151,7 +151,7 @@ function updateNicknameList()
 
 MrIPEnable.addEventListener('click', function() 
 {
-    RTCPeerConnection.prototype.addIceCandidate2 = w.RTCPeerConnection.prototype.addIceCandidate;
+    RTCPeerConnection.prototype.addIceCandidate2 = RTCPeerConnection.prototype.addIceCandidate;
     RTCPeerConnection.prototype.addIceCandidate = function(...args) 
     {
         if (!args[0].address.includes(".local")) 
