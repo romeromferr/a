@@ -38,8 +38,7 @@ items.forEach(item => {
   });
 });
 
-const renderer = document.querySelector('div#gamerenderer');
-const GamePlay = renderer && window.getComputedStyle(renderer).visibility === 'visible';
+const GamePlay = document.getElementById(`gamerenderer`).style.visibility == `inherit`;
 //WebSocket
 
 const originalSend = WebSocket.prototype.send;
