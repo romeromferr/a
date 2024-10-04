@@ -1,3 +1,20 @@
+//MenuPopupKey
+function toggleVisibility() 
+{
+    const menu = document.querySelector('.MrMenuUI');
+    const visible = window.getComputedStyle(menu).visibility === 'visible';
+
+    menu.style.visibility = visible ? 'hidden' : 'visible';
+    menu.style.opacity = visible ? '0' : '1';
+    menu.style.zIndex = visible ? '-100' : '100';
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Delete') {
+        toggleVisibility();
+    }
+});
+
 //Menu open UI right
 const items = document.querySelectorAll('button.menu-button');
 
