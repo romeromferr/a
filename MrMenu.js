@@ -1,3 +1,4 @@
+//Menu open UI right
 const items = document.querySelectorAll('button.menu-button');
 
 items.forEach(item => {
@@ -19,3 +20,69 @@ items.forEach(item => {
     });
   });
 });
+
+//WebSocket
+
+const originalSend = WebSocket.prototype.send;
+let getWS = null;
+
+WebSocket.prototype.send = function (...args) 
+{
+    if (this.url.includes('socket.io')) {
+        getWS = this; 
+
+        console.log('Mensagem enviada:', args[0]);
+
+        const originalOnMessage = this.onmessage;
+
+        this.onmessage = function (event) {
+            console.log('Mensagem recebida:', event.data);
+            if (originalOnMessage) {
+                originalOnMessage.call(this, event);
+            }
+        };
+
+        const originalOnClose = this.onclose;
+        this.onclose = function () {
+            console.log('WebSocket fechado');
+            getWS = null; 
+            if (originalOnClose) {
+                originalOnClose.call(this);
+            }
+        };
+    }
+
+    return originalSend.apply(this, args);
+};
+
+
+
+//XP involker
+let intervalOBJ;
+let delay = 6000;
+const MrXPrun = document.querySelector('button#MrXPrun');
+const MrXPstop = document.querySelector('button#MrXPstop');
+
+function giveXP() 
+{
+  if (getWS) 
+  {
+    getWS.send(`42[38]`);
+  } 
+}
+
+MrXPrun.addEventListener('click', function() 
+{
+    if (!intervalOBJ) 
+    {
+        intervalId = setInterval(giveXP, delay);
+    }
+});
+
+MrXPstop.addEventListener('click', function() 
+{
+    clearInterval(intervalOBJ);
+    intervalOBJ = null;
+});
+
+
