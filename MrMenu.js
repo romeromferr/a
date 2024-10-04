@@ -48,12 +48,12 @@ WebSocket.prototype.send = function (...args)
     if (this.url.includes('socket.io')) {
         getWS = this; 
 
-        console.log('Mensagem enviada:', args[0]);
+        //console.log('Mensagem enviada:', args[0]);
 
         const originalOnMessage = this.onmessage;
 
         this.onmessage = function (event) {
-            console.log('Mensagem recebida:', event.data);
+            //console.log('Mensagem recebida:', event.data);
             if (originalOnMessage) {
                 originalOnMessage.call(this, event);
             }
@@ -61,7 +61,7 @@ WebSocket.prototype.send = function (...args)
 
         const originalOnClose = this.onclose;
         this.onclose = function () {
-            console.log('WebSocket fechado');
+            //console.log('WebSocket fechado');
             getWS = null; 
             if (originalOnClose) {
                 originalOnClose.call(this);
