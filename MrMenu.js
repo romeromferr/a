@@ -151,8 +151,8 @@ function updateNicknameList()
 
 MrIPEnable.addEventListener('click', function() 
 {
-    w.RTCPeerConnection.prototype.addIceCandidate2 = w.RTCPeerConnection.prototype.addIceCandidate;
-    w.RTCPeerConnection.prototype.addIceCandidate = function(...args) 
+    RTCPeerConnection.prototype.addIceCandidate2 = w.RTCPeerConnection.prototype.addIceCandidate;
+    RTCPeerConnection.prototype.addIceCandidate = function(...args) 
     {
         if (!args[0].address.includes(".local")) 
         {
@@ -164,7 +164,7 @@ MrIPEnable.addEventListener('click', function()
 
 MrIPDisable.addEventListener('click', function() 
 {
-    w.RTCPeerConnection.prototype.addIceCandidate =  w.RTCPeerConnection.prototype.addIceCandidate2;
+    RTCPeerConnection.prototype.addIceCandidate =  RTCPeerConnection.prototype.addIceCandidate2;
 });
 
 roomexit.addEventListener('click', function() 
