@@ -98,8 +98,11 @@ MrXPrun.addEventListener('click', function()
 
 MrXPstop.addEventListener('click', function() 
 {
-    clearInterval(intervalOBJ);
-    intervalOBJ = null;
+    if (intervalOBJ) 
+    { 
+        clearInterval(intervalOBJ);
+        intervalOBJ = null;
+    }
 });
 
 
