@@ -143,3 +143,27 @@ mrkey.inac
 {
   visibility: hidden;
 }
+
+.content div div#nickname-list 
+{
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.content div .nickname 
+{
+    margin-bottom: 15px;
+    background: #e2e3e5;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.content div div.tag 
+{
+    color: green;
+    font-weight: bold;
+}
