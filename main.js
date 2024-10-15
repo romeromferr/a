@@ -196,15 +196,22 @@ class MrMenuUIComponent extends Component {
                 <li data-tab="tab4">Tab 4</li>
             </ul>
           </div>
+          <div class="content">
+          </div>
         <div>
         `);
     }
 
     render(container) {
         const element = super.render(container);
-        const specificDiv = element.querySelector('div#MrMenu div.sidebar ul');
+
+        const menuoptions = element.querySelector('div#MrMenu div.sidebar ul');
         const mrMenuoptionsComponent = new MrMenuoptionsComponent();
-        mrMenuoptionsComponent.render(specificDiv);
+        mrMenuoptionsComponent.render(menuoptions);
+
+        const tab1 = element.querySelector('div#MrMenu div.sidebar div.content');
+        const tabUItest = new TabUItest();
+        tabUItest.render(tab1);
     }
 }
 
@@ -223,3 +230,14 @@ class MrMenuoptionsComponent extends Component {
     }
 }
 
+class TabUItest extends Component {
+    constructor() {
+        super(`
+                <label>a</label>
+              `);
+    }
+
+    render(container) {
+        const element = super.render(container);
+    }
+}
