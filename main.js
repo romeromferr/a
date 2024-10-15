@@ -202,5 +202,24 @@ class MrMenuUIComponent extends Component {
 
     render(container) {
         const element = super.render(container);
+        const specificDiv = element.querySelector('div#MrMenu div.sidebar ul');
+        const mrMenuoptionsComponent = new MrMenuoptionsComponent();
+        mrMenuoptionsComponent.render(specificDiv);
     }
 }
+
+class MrMenuoptionsComponent extends Component {
+    constructor() {
+        super(`
+                <li data-tab="tab1" class="active">UI TEST</li>
+                <li data-tab="tab2">Host Manager</li>
+                <li data-tab="tab3">Tab 3</li>
+                <li data-tab="tab4">Tab 4</li>
+              `);
+    }
+
+    render(container) {
+        const element = super.render(container);
+    }
+}
+
