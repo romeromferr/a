@@ -141,6 +141,7 @@ div#MrMenu .content input[type="range"]
 
 }
 `;
+
 function addCSS(ID, cssString, replace = false)
 {
     let styleElement = document.getElementById(ID);
@@ -158,6 +159,7 @@ function addCSS(ID, cssString, replace = false)
         document.head.appendChild(styleElement);
     }
 }
+
 class Component 
 {
     constructor(htmlString) {
@@ -170,11 +172,16 @@ class Component
         return doc.body.firstChild;
     }
 
-    render(container) {
-        const element = this.create();
-        container.appendChild(element);
-        return element; 
+   render(container) {
+    const element = this.create();
+    if (!container) {
+        console.error('Container not found for appending MrMenu UI component');
+        return null; 
     }
+    container.appendChild(element);
+    return element; 
+   }
+
 }
 
 class MrMenuUIComponent extends Component {
